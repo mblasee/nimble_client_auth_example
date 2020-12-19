@@ -7,7 +7,7 @@ void setup()
   Serial.println("Starting NimBLE Client");
 
   NimBLEDevice::init("");
-  NimBLEDevice::setSecurityAuth(true, false, true);
+  NimBLEDevice::setSecurityAuth(true, true, true);
   NimBLEScan *pScan = NimBLEDevice::getScan();
   NimBLEScanResults results = pScan->start(5);
 
