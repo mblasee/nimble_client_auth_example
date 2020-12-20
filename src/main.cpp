@@ -78,8 +78,9 @@ void setup()
   Serial.println("Starting NimBLE Client");
 
   NimBLEDevice::init("");
-  NimBLEDevice::setPower(ESP_PWR_LVL_P9); 
+  NimBLEDevice::setPower(ESP_PWR_LVL_P9);
   NimBLEDevice::setSecurityAuth(true, true, true);
+  NimBLEDevice::setSecurityIOCap(BLE_HS_IO_KEYBOARD_ONLY);
   NimBLEScan *pScan = NimBLEDevice::getScan();
   NimBLEScanResults results = pScan->start(5);
 
