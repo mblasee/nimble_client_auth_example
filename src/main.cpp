@@ -47,7 +47,7 @@ class ClientCallbacks : public NimBLEClientCallbacks
   {
     Serial.println("Client Passkey Request");
     /** return the passkey to send to the server */
-    return 123356;
+    return 123456;
   };
 
   bool onConfirmPIN(uint32_t pass_key)
@@ -78,6 +78,7 @@ void setup()
   Serial.println("Starting NimBLE Client");
 
   NimBLEDevice::init("");
+  NimBLEDevice::setPower(ESP_PWR_LVL_P9); 
   NimBLEDevice::setSecurityAuth(true, true, true);
   NimBLEScan *pScan = NimBLEDevice::getScan();
   NimBLEScanResults results = pScan->start(5);
